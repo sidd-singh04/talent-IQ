@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import { ENV } from "./lib/env.js";
 import { connectDB } from "./lib/db.js";
+import {serve} from "inngest/express";
+import { inngest } from "./lib/inngest.js";
 
 const app = express();
 
@@ -19,6 +21,7 @@ app.use(
   }),
 );
 
+app.use("/api/inngest", serve({ client: inngest, functions }));
 // routes
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API Running" });
