@@ -4,6 +4,9 @@ import { ENV } from "./lib/env.js";
 import { connectDB } from "./lib/db.js";
 import {serve} from "inngest/express";
 import { inngest, functions } from "./lib/inngest.js";
+import { clerkMiddleware } from "@clerk/express";
+import chatRoutes from "./routes/chatRoutes.js"
+
 
 const app = express();
 
@@ -21,11 +24,16 @@ app.use(
   }),
 );
 
+app.use(clerkMiddleware());
+
 app.use("/api/inngest", serve({ client: inngest, functions }));
-// routes
-app.get("/", (req, res) => {
+app.use("/api/chat", chatRoutes);
+
+app.get("/health", (req, res) => {
+  req.auth;
   res.status(200).json({ message: "API Running" });
 });
+
 
 // port
 const PORT = ENV.PORT || 5000;
