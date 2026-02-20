@@ -1,4 +1,4 @@
-# Real-Time Interview Platform
+# Talent - IQ
 
 ## Description
 A full-stack real-time technical interview platform built using the MERN stack. The platform enables 1-on-1 live coding interviews with video communication, secure code execution, real-time collaboration, and automated feedback based on test cases.
