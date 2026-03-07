@@ -18,7 +18,9 @@ function ProblemPage() {
 
   const [currentProblemId, setCurrentProblemId] = useState("two-sum");
   const [selectedLanguage, setSelectedLanguage] = useState("javascript");
-  const [code, setCode] = useState(PROBLEMS[currentProblemId].starterCode.javascript);
+  const [code, setCode] = useState(
+    PROBLEMS[currentProblemId].starterCode.javascript,
+  );
   const [output, setOutput] = useState(null);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -40,7 +42,8 @@ function ProblemPage() {
     setOutput(null);
   };
 
-  const handleProblemChange = (newProblemId) => navigate(`/problem/${newProblemId}`);
+  const handleProblemChange = (newProblemId) =>
+    navigate(`/problem/${newProblemId}`);
 
   const triggerConfetti = () => {
     confetti({
@@ -56,53 +59,54 @@ function ProblemPage() {
     });
   };
 
+  // Normalize output from different languages
   const normalizeOutput = (output) => {
-    // normalize output for comparison (trim whitespace, handle different spacing)
+    if (!output) return "";
     return output
-      .trim()
-      .split("\n")
-      .map((line) =>
-        line
-          .trim()
-          // remove spaces after [ and before ]
-          .replace(/\[\s+/g, "[")
-          .replace(/\s+\]/g, "]")
-          // normalize spaces around commas to single space after comma
-          .replace(/\s*,\s*/g, ",")
-      )
-      .filter((line) => line.length > 0)
-      .join("\n");
+      .trim() // remove leading/trailing spaces
+      .replace(/'/g, '"') // replace single quotes with double quotes
+      .replace(/\s+/g, "") // remove all whitespace (spaces, tabs, newlines)
+      .split("\n") // split by line
+      .filter((line) => line.length > 0) // remove empty lines
+      .join("\n"); // join lines again
   };
-
+  // Compare actual vs expected output
   const checkIfTestsPassed = (actualOutput, expectedOutput) => {
     const normalizedActual = normalizeOutput(actualOutput);
     const normalizedExpected = normalizeOutput(expectedOutput);
-
-    return normalizedActual == normalizedExpected;
+    return normalizedActual === normalizedExpected;
   };
 
+  // Run code and check test cases
   const handleRunCode = async () => {
     setIsRunning(true);
     setOutput(null);
 
     const result = await executeCode(selectedLanguage, code);
-    setOutput(result);
+
+    // Ensure we have something to display
+    let actualOutput = result.output?.trim();
+    if (!actualOutput)
+      actualOutput = result.error?.trim() || "No output captured";
+
+    setOutput({ ...result, output: actualOutput });
     setIsRunning(false);
 
-    // check if code executed successfully and matches expected output
-
-    if (result.success) {
+    if (result.success && actualOutput !== "No output captured") {
       const expectedOutput = currentProblem.expectedOutput[selectedLanguage];
-      const testsPassed = checkIfTestsPassed(result.output, expectedOutput);
+      const testsPassed = checkIfTestsPassed(actualOutput, expectedOutput);
 
       if (testsPassed) {
         triggerConfetti();
         toast.success("All tests passed! Great job!");
       } else {
+        console.log("Actual Output:", actualOutput);
+        console.log("Expected Output:", expectedOutput);
         toast.error("Tests failed. Check your output!");
       }
     } else {
-      toast.error("Code execution failed!");
+      console.log("Execution Error:", result.error);
+      toast.error("Code execution failed or no output captured!");
     }
   };
 

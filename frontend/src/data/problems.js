@@ -65,7 +65,7 @@ class Solution {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 3}, 6))); // Expected: [0, 1]
     }
 }`,
-  cpp: `#include <bits/stdc++.h>
+      cpp: `#include <bits/stdc++.h>
   using namespace std;
 
   vector<int> twoSum(vector<int>& nums, int target) {
@@ -88,14 +88,13 @@ class Solution {
       cout << "[" << res3[0] << "," << res3[1] << "]" << endl;
 
       return 0;
-  }`
-
+  }`,
     },
     expectedOutput: {
       javascript: "[0,1]\n[1,2]\n[0,1]",
       python: "[0, 1]\n[1, 2]\n[0, 1]",
       java: "[0, 1]\n[1, 2]\n[0, 1]",
-      cpp: "[0,1]\n[1,2]\n[0,1]"
+      cpp: "[0,1]\n[1,2]\n[0,1]",
     },
   },
 
@@ -202,7 +201,9 @@ class Solution {
     category: "String • Two Pointers",
     description: {
       text: "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
-      notes: ["Given a string s, return true if it is a palindrome, or false otherwise."],
+      notes: [
+        "Given a string s, return true if it is a palindrome, or false otherwise.",
+      ],
     },
     examples: [
       {
@@ -222,7 +223,10 @@ class Solution {
           's is an empty string "" after removing non-alphanumeric characters. Since an empty string reads the same forward and backward, it is a palindrome.',
       },
     ],
-    constraints: ["1 ≤ s.length ≤ 2 * 10⁵", "s consists only of printable ASCII characters"],
+    constraints: [
+      "1 ≤ s.length ≤ 2 * 10⁵",
+      "s consists only of printable ASCII characters",
+    ],
     starterCode: {
       javascript: `function isPalindrome(s) {
   // Write your solution here
@@ -254,7 +258,7 @@ print(isPalindrome(" "))  # Expected: True`,
         System.out.println(isPalindrome(" ")); // Expected: true
     }
 }`,
-  cpp: `#include <bits/stdc++.h>
+      cpp: `#include <bits/stdc++.h>
   using namespace std;
 
   bool isPalindrome(string s) {
@@ -268,14 +272,13 @@ print(isPalindrome(" "))  # Expected: True`,
       cout << isPalindrome("race a car") << endl;
       cout << isPalindrome(" ") << endl;
       return 0;
-  }`
-
+  }`,
     },
     expectedOutput: {
       javascript: "true\nfalse\ntrue",
       python: "True\nFalse\nTrue",
       java: "true\nfalse\ntrue",
-      cpp: "1\n0\n1"
+      cpp: "1\n0\n1",
     },
   },
 
@@ -337,7 +340,7 @@ print(maxSubArray([5,4,-1,7,8]))  # Expected: 23`,
         System.out.println(maxSubArray(new int[]{5,4,-1,7,8})); // Expected: 23
     }
 }`,
-  cpp: `#include <bits/stdc++.h>
+      cpp: `#include <bits/stdc++.h>
   using namespace std;
 
   int maxSubArray(vector<int>& nums) {
@@ -351,14 +354,13 @@ print(maxSubArray([5,4,-1,7,8]))  # Expected: 23`,
       cout << maxSubArray(vector<int>{1}) << endl;
       cout << maxSubArray(vector<int>{5,4,-1,7,8}) << endl;
       return 0;
-  }`
-
+  }`,
     },
     expectedOutput: {
       javascript: "6\n1\n23",
       python: "6\n1\n23",
       java: "6\n1\n23",
-      cpp: "6\n1\n23"
+      cpp: "6\n1\n23",
     },
   },
 
@@ -416,7 +418,7 @@ print(maxArea([1,1]))  # Expected: 1`,
         System.out.println(maxArea(new int[]{1,1})); // Expected: 1
     }
 }`,
-  cpp: `#include <bits/stdc++.h>
+      cpp: `#include <bits/stdc++.h>
   using namespace std;
 
   int maxArea(vector<int>& height) {
@@ -429,14 +431,13 @@ print(maxArea([1,1]))  # Expected: 1`,
       cout << maxArea(vector<int>{1,8,6,2,5,4,8,3,7}) << endl;
       cout << maxArea(vector<int>{1,1}) << endl;
       return 0;
-  }`
-
+  }`,
     },
     expectedOutput: {
       javascript: "49\n1",
       python: "49\n1",
       java: "49\n1",
-      cpp: "49\n1"
+      cpp: "49\n1",
     },
   },
 };
@@ -463,6 +464,3 @@ export const LANGUAGE_CONFIG = {
     icon: "/CPP.jpg",
   },
 };
-
-
-
