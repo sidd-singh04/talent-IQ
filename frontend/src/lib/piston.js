@@ -55,7 +55,7 @@ export async function executeCode(language, code) {
   }
 
   try {
-    const response = await fetch("https://talent-iq-2ccc.onrender.com/api", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/execute`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
