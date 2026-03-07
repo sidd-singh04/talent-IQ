@@ -12,7 +12,7 @@ export async function executeCode(language, code) {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/api/execute", {
+    const response = await fetch("https://talent-iq-one-sigma.vercel.app/api/execute", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
