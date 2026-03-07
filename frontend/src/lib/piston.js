@@ -12,7 +12,7 @@
 //   }
 
 //   try {
-//     const response = await fetch("https://talent-iq-one-sigma.vercel.app/api/execute", {
+//     const response = await fetch("http://localhost:3000/api/execute", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -41,9 +41,8 @@
 
 
 
-
-
 export async function executeCode(language, code) {
+  // Mapping frontend language keys to JDoodle expected keys
   const languageMap = {
     javascript: "javascript",
     python: "python",
@@ -56,23 +55,16 @@ export async function executeCode(language, code) {
   }
 
   try {
-    const response = await fetch("/api/execute", {
+    const response = await fetch("https://talent-iq-2ccc.onrender.com/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        language: languageMap[language],
+        language: languageMap[language], // must match JDoodleLangMap keys
         code: code,
       }),
     });
 
-    // Agar response empty ya invalid JSON hua
-    const text = await response.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      return { success: false, error: "Backend returned invalid JSON", raw: text };
-    }
+    const data = await response.json();
 
     if (!response.ok) {
       return { success: false, error: data.error || "Execution failed" };
