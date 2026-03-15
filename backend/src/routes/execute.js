@@ -15,12 +15,13 @@ const JDoodleLangMap = {
   cpp: { language: "cpp17", versionIndex: "2" },
 };
 
+//Route 
 router.post("/", async (req, res) => {
   try {
     const { language, code } = req.body;
 
     if (!language || !code)
-      return res.status(400).json({ error: "Language and code required" });
+      return res.status(400).json({ error: "Language and code required to proceed" });
 
     if (!JDoodleLangMap[language])
       return res.status(400).json({ error: "Unsupported language" });

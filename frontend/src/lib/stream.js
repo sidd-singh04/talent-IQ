@@ -13,7 +13,7 @@ export const initializeStreamClient = async (user, token) => {
     await disconnectStreamClient();
   }
 
-  if (!apiKey) throw new Error("Stream API key is not provided.");
+  if (!apiKey) throw new Error("Stream API key is not provided");
 
   client = new StreamVideoClient({
     apiKey,
