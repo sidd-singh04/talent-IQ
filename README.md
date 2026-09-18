@@ -2,7 +2,9 @@
 
 > **A real-time technical interview platform for collaborative coding interviews with video, chat, live code execution, and automated evaluation.**
 
-![Talent-IQ Landing Page](screenshots/landing-page.png)
+<p align="center">
+  <img src="screenshots/landing-page.png" width="750" alt="Talent-IQ Landing Page">
+</p>
 
 Talent-IQ is a full-stack technical interview platform that provides a complete environment for conducting **1-on-1 coding interviews**. Interviewers and candidates can communicate through video and chat, collaborate during coding sessions, share screens, execute code, and evaluate solutions using test cases.
 
@@ -18,7 +20,9 @@ The project integrates multiple services — **Clerk, Stream, JDoodle, Inngest, 
 * Protected backend APIs
 * Authenticated user and interview workflows
 
-![Sign in with Clerk](screenshots/auth-clerk.png)
+<p align="center">
+  <img src="screenshots/auth-clerk.png" width="600" alt="Sign in with Clerk">
+</p>
 
 ### 📊 Dashboard
 
@@ -26,7 +30,9 @@ The project integrates multiple services — **Clerk, Stream, JDoodle, Inngest, 
 * Interview history
 * Real-time session information
 
-![Dashboard](screenshots/dashboard.png)
+<p align="center">
+  <img src="screenshots/dashboard.png" width="650" alt="Dashboard">
+</p>
 
 ### 💻 Coding Environment
 
@@ -37,7 +43,9 @@ The project integrates multiple services — **Clerk, Stream, JDoodle, Inngest, 
 * Success/failure feedback
 * Dedicated practice problems for solo coding
 
-![Practice Problems](screenshots/practice-problems.png)
+<p align="center">
+  <img src="screenshots/practice-problems.png" width="650" alt="Practice Problems">
+</p>
 
 ### 🎥 Real-Time Interviews
 
@@ -48,14 +56,18 @@ The project integrates multiple services — **Clerk, Stream, JDoodle, Inngest, 
 * Session recording
 * Room locking with a maximum of 2 participants
 
-![Live Coding Session](screenshots/live-coding-session.png)
+<p align="center">
+  <img src="screenshots/live-coding-session.png" width="650" alt="Live Coding Session">
+</p>
 
 ### 💬 Real-Time Chat
 
 * Real-time messaging using **Stream Chat SDK**
 * Integrated directly into the interview environment
 
-![Session Chat](screenshots/session-chat.png)
+<p align="center">
+  <img src="screenshots/session-chat.png" width="650" alt="Session Chat">
+</p>
 
 ### ⚡ Background Processing
 
