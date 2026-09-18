@@ -2,13 +2,31 @@
 
 > **A real-time technical interview platform for collaborative coding interviews with video, chat, live code execution, and automated evaluation.**
 
+![Talent-IQ Landing Page](screenshots/landing-page.png)
+
 Talent-IQ is a full-stack technical interview platform that provides a complete environment for conducting **1-on-1 coding interviews**. Interviewers and candidates can communicate through video and chat, collaborate during coding sessions, share screens, execute code, and evaluate solutions using test cases.
 
-The project integrates multiple services including **Clerk, Stream, JDoodle, Inngest, MongoDB, and TanStack Query** into a single full-stack application.
+The project integrates multiple services — **Clerk, Stream, JDoodle, Inngest, MongoDB, and TanStack Query** — into a single full-stack application.
 
 ---
 
 ## 🚀 Features
+
+### 🔐 Authentication
+
+* Authentication and authorization using **Clerk**
+* Protected backend APIs
+* Authenticated user and interview workflows
+
+![Sign in with Clerk](screenshots/auth-clerk.png)
+
+### 📊 Dashboard
+
+* Interview and session statistics
+* Interview history
+* Real-time session information
+
+![Dashboard](screenshots/dashboard.png)
 
 ### 💻 Coding Environment
 
@@ -19,6 +37,8 @@ The project integrates multiple services including **Clerk, Stream, JDoodle, Inn
 * Success/failure feedback
 * Dedicated practice problems for solo coding
 
+![Practice Problems](screenshots/practice-problems.png)
+
 ### 🎥 Real-Time Interviews
 
 * Private **1-on-1 interview rooms**
@@ -28,22 +48,14 @@ The project integrates multiple services including **Clerk, Stream, JDoodle, Inn
 * Session recording
 * Room locking with a maximum of 2 participants
 
+![Live Coding Session](screenshots/live-coding-session.png)
+
 ### 💬 Real-Time Chat
 
 * Real-time messaging using **Stream Chat SDK**
 * Integrated directly into the interview environment
 
-### 🔐 Authentication
-
-* Authentication and authorization using **Clerk**
-* Protected backend APIs
-* Authenticated user and interview workflows
-
-### 📊 Dashboard
-
-* Interview and session statistics
-* Interview history
-* Real-time session information
+![Session Chat](screenshots/session-chat.png)
 
 ### ⚡ Background Processing
 
@@ -98,19 +110,50 @@ The project integrates multiple services including **Clerk, Stream, JDoodle, Inn
 
 ## 🛠️ Tech Stack
 
-| Category        | Technology             |
-| --------------- | ---------------------- |
-| Frontend        | React.js, Tailwind CSS |
-| Code Editor     | Monaco Editor          |
-| Backend         | Node.js, Express.js    |
-| Database        | MongoDB                |
-| Authentication  | Clerk                  |
-| Video & Chat    | Stream SDK             |
-| Code Execution  | JDoodle API            |
-| Server State    | TanStack Query         |
-| Background Jobs | Inngest                |
-| API             | REST                   |
-| Version Control | Git & GitHub           |
+| Category         | Technology              |
+| ----------------- | ------------------------ |
+| Frontend          | React.js, Tailwind CSS   |
+| Code Editor       | Monaco Editor            |
+| Backend           | Node.js, Express.js      |
+| Database          | MongoDB                  |
+| Authentication    | Clerk                    |
+| Video & Chat      | Stream SDK               |
+| Code Execution    | JDoodle API              |
+| Server State      | TanStack Query           |
+| Background Jobs   | Inngest                  |
+| API               | REST                     |
+| Version Control   | Git & GitHub             |
+
+---
+
+## ⚙️ Getting Started
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/sidd-singh04/talent-IQ.git
+cd talent-IQ
+```
+
+**2. Install dependencies**
+```bash
+cd frontend && npm install
+cd ../backend && npm install
+```
+
+**3. Set up environment variables**
+
+Copy `.env.example` to `.env` in both `frontend/` and `backend/`, and fill in your own credentials for Clerk, Stream, JDoodle, MongoDB, and Inngest.
+
+**4. Run the app**
+```bash
+# in backend/
+npm run dev
+
+# in frontend/ (separate terminal)
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` (or whichever port your frontend dev server prints).
 
 ---
 
@@ -150,15 +193,11 @@ A `.env.example` file documents the required environment variables without expos
 
 ## 🎯 Project Focus
 
-Talent-IQ was built to provide practical experience with the architecture of a modern full-stack application, including:
+Talent-IQ was built to gain practical experience with the architecture of a modern full-stack application, including full-stack development, REST API design, authentication & authorization, database integration, real-time communication, third-party API integration, code execution and evaluation, server-state management, background job processing, and production deployment.
 
-* Full-stack development
-* REST API design
-* Authentication & authorization
-* Database integration
-* Real-time communication
-* Third-party API integration
-* Code execution and evaluation
-* Server-state management
-* Background job processing
-* Production deployment
+---
+
+## 👨‍💻 Author
+
+**Siddharth Singh**
+GitHub: [@sidd-singh04](https://github.com/sidd-singh04)
