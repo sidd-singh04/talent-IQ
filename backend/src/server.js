@@ -25,10 +25,9 @@ app.use(
   }),
 );
 
-
+app.use(clerkMiddleware());
 
 app.use("/api/execute", executeRoute);
-app.use(clerkMiddleware());
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
 app.use("/api/chat", chatRoutes);

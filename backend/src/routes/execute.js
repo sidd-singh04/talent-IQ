@@ -1,11 +1,12 @@
 import express from "express";
 import fetch from "node-fetch";
+import { ENV } from "../config/env.js";
 
 const router = express.Router();
 
 // JDoodle credentials
-const CLIENT_ID = "bb2a41340146533e813ef5c125ce81d0";
-const CLIENT_SECRET = "94f95122e3238cabc0358101f6197209ddf909baaa536544bef6a184cfaea757";
+const CLIENT_ID = ENV.JDOODLE_CLIENT_ID;
+const CLIENT_SECRET = ENV.JDOODLE_CLIENT_SECRET;
 
 // Map frontend languages to JDoodle language & versionIndex
 const JDoodleLangMap = {
