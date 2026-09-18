@@ -1,6 +1,6 @@
 import express from "express";
 import fetch from "node-fetch";
-import { ENV } from "../config/env.js";
+import { ENV } from "./lib/env.js";
 
 const router = express.Router();
 
