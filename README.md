@@ -1,4 +1,4 @@
-# Talent-IQ
+# 👨‍💻 Talent-IQ
 
 > **A real-time technical interview platform for collaborative coding interviews with video, chat, live code execution, and automated evaluation.**
 
